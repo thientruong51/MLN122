@@ -71,7 +71,7 @@ const EconomicAnalysis = () => {
           position: 'relative',
           minHeight: '110vh',
           py: 16,
-          px: { xs: 2, md: 10 },
+          px: { xs: 2, md: 6 },
           color: '#fff',
         }}
       >
@@ -93,7 +93,7 @@ const EconomicAnalysis = () => {
             zIndex: -3,
           }}
         />
-       <Box
+        <Box
           sx={{
             position: 'absolute',
             inset: 0,
@@ -103,27 +103,28 @@ const EconomicAnalysis = () => {
         />
 
         <Typography
-          variant="h3"
+          variant="h4"
           fontFamily="serif"
           fontWeight="bold"
           align="center"
           gutterBottom
           color="#f1c40f"
         >
-           PHÂN TÍCH – GIẢI ĐÁP CÂU HỎI
+          PHÂN TÍCH – GIẢI ĐÁP CÂU HỎI
         </Typography>
-         <Typography
-          variant="h3"
+        <Typography
+          variant="h5"
           fontFamily="serif"
           fontWeight="bold"
           align="center"
           gutterBottom
           color="#f1c40f"
         >
-Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càng tốt không?        </Typography>
+          Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càng tốt không?
+        </Typography>
 
         <Stack
-          direction={{ xs: 'column', md: 'row' }}
+          direction="row"
           spacing={4}
           justifyContent="center"
           alignItems="center"
@@ -132,14 +133,14 @@ Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càn
           zIndex={2}
         >
           {cardData.map((card, index) => (
-            <Box key={index} textAlign="center">
+            <Box key={index} textAlign="center" sx={{ mx: 'auto', mb: 4 }}>
               <motion.div
                 whileTap={{ rotateY: 180 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6 }}
                 style={{
-                  width: 320,
-                  height: 460,
+                  width: 280,
+                  height: 420,
                   perspective: 1000,
                   cursor: 'pointer',
                   marginBottom: '0.5rem',
@@ -177,7 +178,7 @@ Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càn
                   />
                 </motion.div>
               </motion.div>
-              <Typography variant="h6" fontWeight="bold" mt={1}>
+              <Typography variant="subtitle1" fontWeight="bold" mt={1}>
                 {card.title}
               </Typography>
             </Box>
@@ -218,8 +219,8 @@ Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càn
                   color: '#111',
                   padding: '2rem',
                   borderRadius: '12px',
-                  maxWidth: '600px',
-                  width: '90%',
+                  maxWidth: '90%',
+                  width: '600px',
                 }}
               >
                 <Typography variant="h5" fontWeight="bold" mb={2}>
@@ -251,7 +252,20 @@ Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càn
           )}
         </AnimatePresence>
 
-        <Box mt={10} zIndex={2} position="relative"  sx={{ bgcolor: 'rgba(255, 255, 255, 0.16)', backdropFilter: 'blur(5px)', borderRadius: 5, px: 4, py: 3, maxWidth: '900px', ml:50  }}>
+        <Box
+          mt={10}
+          zIndex={2}
+          position="relative"
+          sx={{
+            bgcolor: 'rgba(255, 255, 255, 0.16)',
+            backdropFilter: 'blur(5px)',
+            borderRadius: 5,
+            px: { xs: 2, md: 4 },
+            py: 3,
+            maxWidth: '900px',
+            mx: 'auto',
+          }}
+        >
           <Typography variant="h4" align="center" fontWeight="bold" gutterBottom color="#f1c40f">
             Kết luận:
           </Typography>

@@ -1,7 +1,12 @@
-import { Typography, Box, Button } from '@mui/material';
+import { Typography, Box, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
+  const handleScroll = () => {
+    const target = document.getElementById('content-start');
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -15,7 +20,7 @@ const Hero = () => {
           display: 'flex',
           flexDirection: 'column',
           color: '#fff',
-          px: 4,
+          px: { xs: 2, sm: 4 },
           overflow: 'hidden',
         }}
       >
@@ -50,14 +55,15 @@ const Hero = () => {
         />
 
         {/* Artistic Header */}
-        <Box
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={1}
+          justifyContent="space-between"
+          alignItems={{ xs: 'flex-start', sm: 'center' }}
           sx={{
             position: 'relative',
             zIndex: 2,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            px: { xs: 3, md: 8 },
+            px: { xs: 2, md: 8 },
             py: 2,
             backgroundColor: 'transparent',
           }}
@@ -65,16 +71,22 @@ const Hero = () => {
           <Typography
             variant="h6"
             fontWeight="bold"
-            sx={{ fontFamily: 'serif', color: '#fff', letterSpacing: 2, borderBottom: '2px solid #f1c40f', pb: 0.5 }}
+            sx={{
+              fontFamily: 'serif',
+              color: '#fff',
+              letterSpacing: 2,
+              borderBottom: '2px solid #f1c40f',
+              pb: 0.5,
+            }}
           >
             EXPERT
           </Typography>
-          <Box sx={{ display: 'flex', gap: 4, alignItems: 'center', fontSize: 13, color: '#ccc' }}>
-            <Typography >MLN122</Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 0.5, sm: 4 }} sx={{ fontSize: 13, color: '#ccc' }}>
+            <Typography>MLN122</Typography>
             <Typography>Lớp: SU25_MLN122_IB1705</Typography>
             <Typography>GV: Nguyễn Văn Bình</Typography>
-          </Box>
-        </Box>
+          </Stack>
+        </Stack>
 
         {/* Text Content */}
         <Box
@@ -86,28 +98,33 @@ const Hero = () => {
             justifyContent: 'center',
             textAlign: 'center',
             zIndex: 2,
-            maxWidth: 800,
+            maxWidth: { xs: '90%', sm: 800 },
             mx: 'auto',
+            mt: { xs: 4, sm: 0 },
           }}
         >
           <Typography
-            variant="h2"
+            variant="h3"
             fontFamily="serif"
             fontWeight={600}
-            sx={{ textTransform: 'uppercase', letterSpacing: 2 }}
+            sx={{
+              textTransform: 'uppercase',
+              letterSpacing: 2,
+              fontSize: { xs: '1.5rem', sm: '2.5rem' },
+            }}
             color="#f1c40f"
           >
             Có phải trong mọi nền kinh tế, càng nhiều vàng và tiền thì càng tốt không?
           </Typography>
-          <Typography variant="h6" sx={{ mt: 3, color: '#ddd' }}>
+          <Typography
+            variant="body1"
+            sx={{ mt: 3, color: '#ddd', fontSize: { xs: '0.95rem', sm: '1.1rem' } }}
+          >
             Một bài học từ một câu chuyện nổi tiếng trong thần thoại Hy Lạp về vị vua Midas và thông qua lý luận kinh điển của C. Mác về hàng hóa và sản xuất hàng hóa trong kinh tế chính trị học
           </Typography>
           <Button
             variant="outlined"
-            onClick={() => {
-              const target = document.getElementById('content-start');
-              if (target) target.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={handleScroll}
             sx={{
               mt: 4,
               borderColor: '#f1c40f',
@@ -120,11 +137,11 @@ const Hero = () => {
                 backgroundColor: '#fff',
                 color: '#000',
               },
+              fontSize: { xs: '0.9rem', sm: '1rem' },
             }}
           >
             Bắt đầu
           </Button>
-
         </Box>
       </Box>
     </motion.div>
