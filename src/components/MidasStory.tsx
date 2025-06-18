@@ -4,16 +4,19 @@ import { motion } from 'framer-motion';
 
 const MidasStory = () => {
   return (
-    <Box id="content-start"
+    <Box
+      id="content-start"
       sx={{
         position: 'relative',
-        height: '110vh',
+        minHeight: '110vh',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
-        px: { xs: 3, md: 10 },
+        px: { xs: 2, sm: 4, md: 10 },
+        py: { xs: 6, sm: 8, md: 10 },
+        textAlign: 'center',
       }}
     >
       {/* Video Background */}
@@ -41,7 +44,8 @@ const MidasStory = () => {
         sx={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)',
+          background:
+            'radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)',
           zIndex: 0,
         }}
       />
@@ -58,8 +62,8 @@ const MidasStory = () => {
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
             alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 6,
+            justifyContent: 'center',
+            gap: { xs: 4, md: 6 },
           }}
         >
           {/* Hình minh họa bên trái */}
@@ -68,30 +72,45 @@ const MidasStory = () => {
             src="/images/midas.png"
             alt="King Midas"
             sx={{
-              width: { xs: '100%', md: '85%' },
+              width: { xs: '100%', sm: '90%', md: '85%' },
               maxWidth: 780,
               borderRadius: 3,
               boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+              mx: 'auto',
             }}
           />
 
           {/* Nội dung chữ bên phải */}
-<Stack spacing={2} sx={{ ml: { md: 0 }, mt: { xs: 6, md: 0 }, maxWidth: 700 }}>      
-          <Typography variant="h4" fontWeight="bold" fontFamily="serif" color='#f1c40f'>
+          <Stack
+            spacing={2}
+            sx={{
+              mt: { xs: 4, md: 0 },
+              maxWidth: 700,
+              mx: { xs: 'auto', md: 0 },
+              textAlign: { xs: 'left', md: 'left' },
+            }}
+          >
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              fontFamily="serif"
+              color="#f1c40f"
+            >
               Câu chuyện vua Midas
             </Typography>
-            <Typography variant="h5" fontWeight={600} color='#f1c40f'>
+            <Typography variant="h6" fontWeight={600} color="#f1c40f">
               Một điều ước biến mọi thứ ông chạm vào thành vàng...
             </Typography>
-            <Typography variant="h6" sx={{ color: '#ddd', lineHeight: 1.8 }}>
-              Vua Midas là một vị vua giàu có và đầy tham vọng. Khi được thần Dionysus ban cho một điều ước, ông đã chọn: “Hãy để mọi thứ ta chạm vào biến thành vàng.”
-              Ban đầu, ông vô cùng sung sướng: cây cối, ngai vàng, thậm chí là trái cây đều trở thành vàng ròng dưới tay ông.
+            <Typography variant="body1" sx={{ color: '#ddd', lineHeight: 1.8 }}>
+              Vua Midas là một vị vua giàu có và đầy tham vọng. Khi được thần Dionysus ban cho một điều ước,
+              ông đã chọn: “Hãy để mọi thứ ta chạm vào biến thành vàng.” Ban đầu, ông vô cùng sung sướng:
+              cây cối, ngai vàng, thậm chí là trái cây đều trở thành vàng ròng dưới tay ông.
             </Typography>
-            <Typography variant="h6" sx={{ color: '#ddd', lineHeight: 1.8 }}>
-              Nhưng niềm vui chóng tàn khi ông không thể ăn, không thể uống. Khi ôm con gái mình – cô bé cũng hóa thành tượng vàng lạnh lẽo.
-              Midas đau khổ, cầu xin thần linh thu hồi điều ước, từ bỏ vàng để đổi lấy cuộc sống và tình yêu thật sự.
+            <Typography variant="body1" sx={{ color: '#ddd', lineHeight: 1.8 }}>
+              Nhưng niềm vui chóng tàn khi ông không thể ăn, không thể uống. Khi ôm con gái mình – cô bé
+              cũng hóa thành tượng vàng lạnh lẽo. Midas đau khổ, cầu xin thần linh thu hồi điều ước, từ bỏ
+              vàng để đổi lấy cuộc sống và tình yêu thật sự.
             </Typography>
-
           </Stack>
         </Box>
       </motion.div>
